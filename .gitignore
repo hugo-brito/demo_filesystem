@@ -1,2 +1,6 @@
 *.class
 *.log
+*.xml
+*.xml
+*.xml
+.idea/workspace.xml
