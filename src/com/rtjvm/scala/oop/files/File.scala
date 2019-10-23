@@ -3,11 +3,12 @@ import com.rtjvm.scala.oop.filesystem.FilesystemException
 
 class File(override val parentPath: String, override val name: String, contents: String) extends DirEntry(parentPath, name) {
 
-	override def asDirectory: Directory = throw new FilesystemException("File cannot be converted to a directory!")
+	def asDirectory: Directory = throw new FilesystemException("File cannot be converted to a directory!")
+	def getType: String = "File"
+	def asFile: File = this
+	def isFile: Boolean = true
+	def isDirectory: Boolean = false
 
-	override def getType: String = "File"
-
-	override def asFile: File = this
 }
 
 object File {
